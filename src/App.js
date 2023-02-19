@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import User from "./components/User";
 import Navbar from "./components/Navbar";
@@ -8,13 +7,15 @@ function App() {
   return (
     <>
       <div className="App">
-        <Navbar />
-        <h1 className="container">Merhaba React</h1>
+        <Navbar title="User App 2" baslik="Bu bir baslik" />
+        <hr />
+        <User name="Murat Ozkan" department="Fullstack" salary="3000$" />
+
+        {/* <h1 className="container">Merhaba React</h1>
         <h4 style={{ color: "blue", fontSize: 30 }}>Clarusway</h4>
         <p className="paragraf">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, nihil!
-        </p>
-        <User />
+          Lorem ipsum dolor sit amet consectetur.
+        </p> */}
       </div>
     </>
   );
