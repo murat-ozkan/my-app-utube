@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 const Navbar = (props) => {
   return (
@@ -8,6 +9,12 @@ const Navbar = (props) => {
       <p className="bg-warning">{props.baslik}</p>
     </div>
   );
+};
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+Navbar.defaultProps = {
+  title: "User App Default Value (Navbar.defaultProps)",
 };
 
 // function Navbar() {
