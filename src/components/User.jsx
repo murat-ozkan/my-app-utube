@@ -12,7 +12,7 @@ class User extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible : true,
+      interview: false,
     };
   }
 
@@ -27,11 +27,12 @@ class User extends Component {
               <FontAwesomeIcon icon={faTrashAlt} />
             </i>
           </div>
-          <div className="card-body">
-            <p className="card-text">Department : {department}</p>
-            <p className="card-text">Salary : {salary}</p>
-            <p>{this.state.test}</p>
-          </div>
+          {this.state.interview ? (
+            <div className="card-body">
+              <p className="card-text">Department : {department}</p>
+              <p className="card-text">Salary : {salary}</p>
+            </div>
+          ) : null}
         </div>
 
         {/* <ul>
