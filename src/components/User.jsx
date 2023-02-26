@@ -9,20 +9,43 @@ class User extends Component {
     salary: "No Information",
     department: "No Information",
   };
+
+  //! Bind işlemi aşağıda. "this" komutunun buraya ait olmasını sağlar.
+  //! Normalde bu js alanında "this" çalışmıyor.
+  //! Aşağıdaki jsx alanında çalışıyordu.
   constructor(props) {
     super(props);
-    this.state = {
-      interview: false,
-    };
+    this.state = { interview: false };
+    this.onClickFunction = this.onClickFunction.bind(this);
   }
+  // onClickFunction(e) {
+  //   console.log(e.target);
+  //   console.log("test");
+  //   console.log(this);
+  // }
+  //! Buradaki onclick fonk arrow olduğu için
+  //! yukarıdaki bind işlemini ypmamıza gerek kalmadı.
+  //! Eğer yukarıdaki onclick fonk gibi yazsaydık o zaman
+  //! bind işlemi gerekecekti.
 
+  onClickFunction = (number, e) => {
+    // console.log(e.target);
+    // console.log(this);
+    // console.log(number);
+    // this.state = { interview: true };
+  };
   render() {
     const { name, department, salary } = this.props;
     return (
       <div className="col-md-8 mb-4">
         <div className="card">
           <div className="card-header d-flex justify-content-between">
-            <h4 className="d-inline">{name}</h4>
+            <h4
+              className="d-inline"
+              onClick={this.onClickFunction.bind(this, 34)}
+            >
+              {name}
+            </h4>
             <i style={{ cursor: "pointer" }}>
               <FontAwesomeIcon icon={faTrashAlt} />
             </i>
